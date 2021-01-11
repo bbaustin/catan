@@ -1,0 +1,117 @@
+body {
+    background: #7AE7C7;
+    font-family: "Futura";
+    font-weight: 100;
+}
+
+section {
+    background: #D6FFB7;
+    display: flex;
+}
+
+footer {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+footer section {
+    padding-left: 20px;
+}
+
+.rollGraph {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.rollGraph div {
+    text-align: center;
+    background:#7AE7C7;
+    color: #FFF689;
+    width: 70px; 
+    font-size: 22px;
+    line-height: 12px;;
+    /* justify-content: space-evenly; */
+}
+
+/* .actualGraph {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 400px;
+    width: 100%;
+    margin: 0 10px 0 10px;
+    justify-content: space-around;
+
+}
+
+.actualGraph div {
+    background: #58355E;
+    height: 1%;
+    width: 70px;
+    justify-content: space-around;
+} */
+
+.counter {
+    color: #EC0B43;
+    font-size: 16px;
+}
+
+.percentage {
+    color: #58355E;
+    font-size: 16px;
+}
+
+.rollingRollCounter {
+    padding-bottom: 10px;
+}
+
+.whoRolledHolder, .diceHolder, .totalHolder, .rollerHolder {
+    justify-content: center;
+}
+
+.whoRolledHolder {
+    font-size: 33px;
+}
+
+.totalHolder {
+    color: #58355E;
+}
+
+.roller {
+    display: inline;
+    padding: 10px;
+    margin: 10px;
+    font-size:22px;
+    background: #7AE7C7;
+    border: 1px solid black;
+    cursor: pointer;
+    width:60px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.roller:hover {
+    background:  #FFF689;
+}
+
+.roller:active {
+    background: #EC0B43;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: #FFF689;
+    border: 1px solid black;
+}
+
+.changeLater, 
+.changeThisToo {
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    line-height: 0px;
+    text-align: center;
+}
