@@ -61,12 +61,10 @@ function tabulateRolls(lastRoll) {
         if (lastRoll == document.getElementsByClassName("rollGraph")[0].children[i].children[0].innerHTML) {
             document.getElementsByClassName("rollGraph")[0].children[i].children[1].innerHTML++; 
         }
-        document.getElementsByClassName("rollGraph")[0].children[i].children[2].innerHTML = ((document.getElementsByClassName("rollGraph")[0].children[i].children[1].innerHTML/allRolls.length)*100).toFixed(1) + "%";
-        
         arrayOfNumbersRolled.push(document.getElementsByClassName("rollGraph")[0].children[i].children[1].innerHTML);
         console.log(arrayOfNumbersRolled);
         highestPercentageHeightComputer = Math.max(...arrayOfNumbersRolled);  // how this work
-
+        document.getElementsByClassName("rollGraph")[0].children[i].children[2].innerHTML = ((document.getElementsByClassName("rollGraph")[0].children[i].children[1].innerHTML/allRolls.length)*100).toFixed(1) + "%";
     }
     determineBarHeight(highestPercentageHeightComputer);
 
@@ -74,6 +72,7 @@ function tabulateRolls(lastRoll) {
 
 function determineBarHeight(maximumHeight) {
     for (var i = 0; i < numberOfRollOptions; i++) {
+        console.log(document.getElementsByClassName("actualGraph")[0].children[i]);
         document.getElementsByClassName("actualGraph")[0].children[i].style.height = ((document.getElementsByClassName("rollGraph")[0].children[i].children[1].innerHTML/maximumHeight)*100).toFixed(1) + "%";
     } 
 }
