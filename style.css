@@ -34,22 +34,24 @@ footer section {
     /* justify-content: space-evenly; */
 }
 
-/* .actualGraph {
+.actualGraph {
     border-left: 1px solid black;
     border-bottom: 1px solid black;
-    height: 400px;
-    width: 100%;
+    height: 120px;
+    width: 110%;
     margin: 0 10px 0 10px;
     justify-content: space-around;
+    display:flex;
 
 }
 
 .actualGraph div {
     background: #58355E;
-    height: 1%;
     width: 70px;
     justify-content: space-around;
-} */
+    align-self: baseline;
+
+}
 
 .counter {
     color: #EC0B43;
@@ -75,28 +77,6 @@ footer section {
 
 .totalHolder {
     color: #58355E;
-}
-
-.roller {
-    display: inline;
-    padding: 10px;
-    margin: 10px;
-    font-size:22px;
-    background: #7AE7C7;
-    border: 1px solid black;
-    cursor: pointer;
-    width:60px;
-    height: 30px;
-    text-align: center;
-    align-items: center;
-}
-
-.roller:hover {
-    background:  #FFF689;
-}
-
-.roller:active {
-    background: #EC0B43;
 }
 
 .dice {
