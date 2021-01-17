@@ -79,6 +79,12 @@ footer section {
     color: #58355E;
 }
 
+.playerRolls {
+    border: 1px solid #58355E;
+    width: 100%;
+    float: left;
+}
+
 .dice {
     width: 100px;
     height: 100px;
@@ -87,8 +93,7 @@ footer section {
     border: 1px solid black;
 }
 
-.changeLater, 
-.changeThisToo {
+.diceSquare {
     font-size: 50px;
     justify-content: center;
     align-items: center;

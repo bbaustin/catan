@@ -1,6 +1,6 @@
 //feature list: 
 // + time 
-// + graph (bar graph I guess using html data?)
+////////////////// + graph (bar graph I guess using html data?)
 // + 
 
 let currentNumber = -1;
@@ -19,8 +19,13 @@ function player(playerName) {
 function determineFirstPlayer() {
     let firstPlayer = prompt("Who's going first?"); 
     numberOfPlayers.push(firstPlayer);
-    let SecondPlayer = prompt("Who's going second?");
-    numberOfPlayers.push(SecondPlayer);
+    let secondPlayer = prompt("Who's going second?");
+    numberOfPlayers.push(secondPlayer);
+    document.getElementsByClassName("playerRolls")[0].append(firstPlayer + "'s rolls: ");
+    document.getElementsByClassName("playerRolls")[1].append(secondPlayer + "'s rolls: ");
+
+
+
 }
 determineFirstPlayer();
 
@@ -37,21 +42,38 @@ function rollDice() {
     tabulateRolls(total);
 }
 
+var whatColor = "red";
+// var whatColor = "#58355E";  //optional feature to make seeing people's rolls easier
 function advancePlayer() {
     currentNumber++; 
     if (currentNumber == numberOfPlayers.length) {
         currentNumber = 0;
+        // whatColor = "#58355E";
     } 
-    document.getElementsByClassName("whoRolled")[0].innerHTML = "<span style=color:red;font-size:45px>" + numberOfPlayers[currentNumber] + "</span> just rolled";
+    document.getElementsByClassName("whoRolled")[0].innerHTML = "<span style=color:" + whatColor +  ";font-size:45px>" + numberOfPlayers[currentNumber] + "</span> just rolled";
+    whatColor = "red";
 }
 
 function tabulateRolls(lastRoll) {
     allRolls.push(lastRoll); //total from rollDice()
-    if (allRolls.length == 1) {
-        document.getElementsByClassName("rollingRollCounter")[0].append(lastRoll);
+    if (allRolls.length < 3) {
+        if (allRolls.length % 2 === 1) {
+            document.getElementsByClassName("playerRolls")[0].append(lastRoll);
+        }
+        else {
+            document.getElementsByClassName("playerRolls")[1].append(lastRoll); 
+        }
+        //document.getElementsByClassName("rollingRollCounter")[0].append("<span style='color:'" + whatColor + "'>" + lastRoll + "</span>");
     }
     else {
-        document.getElementsByClassName("rollingRollCounter")[0].append(", " + lastRoll);
+        if (allRolls.length % 2 === 1) {
+            document.getElementsByClassName("playerRolls")[0].append(", " + lastRoll);
+        }
+        else {
+            document.getElementsByClassName("playerRolls")[1].append(", " + lastRoll);
+
+        }
+        // document.getElementsByClassName("rollingRollCounter")[0].append(", <span style='color:'" + whatColor + "'>" + lastRoll + "</span>");
     }
     document.getElementsByClassName("totalNumberOfRolls")[0].innerHTML = "Total Number of Rolls: " + allRolls.length;
     
@@ -78,8 +100,8 @@ function determineBarHeight(maximumHeight) {
 }
 
 function appendStuff(dice1, dice2, total) {
-    document.getElementsByClassName("changeLater")[0].innerHTML = dice1; 
-    document.getElementsByClassName("changeThisToo")[0].innerHTML = dice2; 
+    document.getElementsByClassName("diceSquare")[0].innerHTML = dice1; 
+    document.getElementsByClassName("diceSquare")[1].innerHTML = dice2; 
     document.getElementsByClassName("total")[0].innerHTML = "Total: " + total;
 
 }
