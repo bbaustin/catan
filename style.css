@@ -1,102 +1,114 @@
 body {
-    background: #7AE7C7;
-    font-family: "Futura";
-    font-weight: 100;
+  background: #7ae7c7;
+  font-family: 'Futura';
+  font-weight: 100;
 }
 
 section {
-    background: #D6FFB7;
-    display: flex;
+  background: #d6ffb7;
+  display: flex;
 }
 
 footer {
-    margin-top: 20px;
-    padding-top: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 footer section {
-    padding-left: 20px;
+  padding: 0 20px;
 }
 
 .rollGraph {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 30px 10px 11px;
 }
 
 .rollGraph div {
-    text-align: center;
-    background:#7AE7C7;
-    color: #FFF689;
-    width: 70px; 
-    font-size: 22px;
-    line-height: 12px;;
-    /* justify-content: space-evenly; */
+  background: #7ae7c7;
+  color: #fff689;
+  font-size: 22px;
+  line-height: 12px;
+  text-align: center;
+  width: 70px;
 }
 
 .actualGraph {
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    height: 120px;
-    width: 110%;
-    margin: 0 10px 0 -10px;
-    justify-content: space-around;
-    display:flex;
-
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  display: flex;
+  height: 120px;
+  justify-content: space-around;
+  margin: 0 10px 0 -10px;
+  width: 110%;
 }
 
 .actualGraph div {
-    background: #58355E;
-    width: 70px;
-    justify-content: space-around;
-    align-self: baseline;
-
+  align-self: baseline;
+  background: #58355e;
+  width: 70px;
 }
 
 .counter {
-    color: #EC0B43;
-    font-size: 16px;
+  color: #ec0b43;
+  font-size: 16px;
 }
 
 .percentage {
-    color: #58355E;
-    font-size: 16px;
+  color: #58355e;
+  font-size: 16px;
 }
 
 .rollingRollCounter {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
-.whoRolledHolder, .diceHolder, .totalHolder, .rollerHolder {
-    justify-content: center;
+.whoRolledHolder,
+.diceHolder,
+.totalHolder,
+.rollerHolder {
+  justify-content: center;
 }
 
 .whoRolledHolder {
-    font-size: 33px;
+  font-size: 33px;
 }
 
 .totalHolder {
-    color: #58355E;
+  color: #58355e;
 }
 
 .playerRolls {
-    border: 1px solid #58355E;
-    width: 100%;
-    float: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.playerRolls div {
+  border: 1px solid #58355e;
+  margin-top: 30px;
+  max-width: 40vw;
+  padding: 25px 25px;
+  width: 45%;
 }
 
 .dice {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    background: #FFF689;
-    border: 1px solid black;
+  background: #fff689;
+  border: 1px solid black;
+  height: 100px;
+  margin: 10px;
+  width: 100px;
 }
 
 .diceSquare {
-    font-size: 50px;
-    justify-content: center;
-    align-items: center;
-    line-height: 0px;
-    text-align: center;
+  align-items: center;
+  font-size: 50px;
+  justify-content: center;
+  line-height: 0px;
+  text-align: center;
+}
+
+@media screen and (min-width: 1100px) {
 }
