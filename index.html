@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html onclick="rollDice()">
+  <head>
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- TODO: Improve the propmt. <section>
+            <p>How many players are there?</p>
+            <input>
+        </section> -->
+    <main>
+      <section class="whoRolledHolder">
+        <p class="whoRolled">just rolled</p>
+        <!-- TODO: Optionally, want to add this? <p class="whosNext"> is next</p> -->
+      </section>
+
+      <section class="diceHolder">
+        <div class="dice">
+          <p class="diceSquare"></p>
+        </div>
+        <div class="dice">
+          <p class="diceSquare"></p>
+        </div>
+      </section>
+
+      <section class="totalHolder">
+        <p class="total">Total:</p>
+      </section>
+
+      <footer>
+        <section>
+          <p class="totalNumberOfRolls">Total Number of Rolls:</p>
+        </section>
+
+        <section>
+          <div class="actualGraph">
+            <div id="2"></div>
+            <div id="3"></div>
+            <div id="4"></div>
+            <div id="5"></div>
+            <div id="6"></div>
+            <div id="7"></div>
+            <div id="8"></div>
+            <div id="9"></div>
+            <div id="10"></div>
+            <div id="11"></div>
+            <div id="12"></div>
+          </div>
+        </section>
+
+        <section class="rollGraph">
+          <div>
+            <p>2</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>3</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>4</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>5</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>6</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>7</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>8</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>9</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>10</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>11</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+
+          <div>
+            <p>12</p>
+            <p class="counter">0</p>
+            <p class="percentage">0%</p>
+          </div>
+        </section>
+
+        <section class="rollingRollCounter">
+          <section class="playerRolls"></section>
+        </section>
+      </footer>
+    </main>
+  </body>
+
+  <script src="script.js"></script>
+</html>
