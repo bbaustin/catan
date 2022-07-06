@@ -1,5 +1,7 @@
 # Catan Dice Roller
 
+You can try this app out [here](https://hereismy.website/catan-dice-roller/)
+
 After my cat knocked one of my dice under the fridge, I built this dice-rolling app to use while playing "The Settlers of Catan." I ended up preferring using it over actual dice, because:
 
 - it keeps track of whose turn it is;
