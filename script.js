@@ -27,8 +27,8 @@ let currentNumber = -1
 let numberOfPlayers = 0
 let players = []
 let allRolls = []
-var largestPercentage = 0
-var numberOfRollOptions =
+let largestPercentage = 0
+let numberOfRollOptions =
   document.getElementsByClassName('rollGraph')[0].childElementCount
 
 function player(playerName) {
@@ -36,18 +36,21 @@ function player(playerName) {
 }
 
 function determineNumberOfPlayers() {
-  numberOfPlayers = prompt('How many are playing? (enter a number)')
+  numberOfPlayers = prompt('How many are playing? (enter a number)') //TODO: Not prompt? Maybe different thing. Don't want cancel
   numberOfPlayers = parseInt(numberOfPlayers, 10)
   if (typeof numberOfPlayers !== 'number') {
-    determineNumberOfPlayers() // TODO: Make this work
+    determineNumberOfPlayers() // TODO: Make this work. RegEx?
   } else {
-    determineFirstPlayer(numberOfPlayers)
+    determinePlayerNames(numberOfPlayers)
   }
 }
 
-function determineFirstPlayer(numberOfPlayers) {
+function determinePlayerNames(numberOfPlayers) {
   for (let i = 1; i < numberOfPlayers + 1; i++) {
     let tempPlayer = prompt(`Enter Player ${i}'s name`)
+    if (!tempPlayer) {
+      tempPlayer = `Player ${i}`
+    }
     players.push(tempPlayer)
     let newPlayerRollDiv = document.createElement('div')
     let newPlayerRollContent = document.createTextNode(
@@ -73,13 +76,11 @@ function rollDice() {
   appendDiceAndTotal(dice1, dice2, total)
 }
 
-var whatColor = 'red'
-// var whatColor = "#58355E";  //optional feature to make seeing people's rolls easier
+let whatColor = 'red' // TODO: Optional feature: Add custom colors per player
 function advancePlayer(total) {
   currentNumber++
   if (currentNumber == players.length) {
     currentNumber = 0
-    // whatColor = "#58355E";
   }
   document.getElementsByClassName('whoRolled')[0].innerHTML =
     '<span style=color:' +
@@ -103,29 +104,13 @@ function tabulateRolls(total, currentNumber) {
       .children[currentNumber].append(`, ${total}`)
   }
 
-  // if (allRolls.length < players.length) {
-  //   if (allRolls.length % 2 === 1) {
-  //     document.getElementsByClassName('playerRolls')[0].append(total)
-  //   } else {
-  //     document.getElementsByClassName('playerRolls')[1].append(total)
-  //   }
-  //   //document.getElementsByClassName("rollingRollCounter")[0].append("<span style='color:'" + whatColor + "'>" + total + "</span>");
-  // } else {
-  //   if (allRolls.length % 2 === 1) {
-  //     document.getElementsByClassName('playerRolls')[0].append(', ' + total)
-  //   } else {
-  //     document.getElementsByClassName('playerRolls')[1].append(', ' + total)
-  //   }
-  //   // document.getElementsByClassName("rollingRollCounter")[0].append(", <span style='color:'" + whatColor + "'>" + total + "</span>");
-  // }
-  // colorSevensRed(total, allRolls.length)
   document.getElementsByClassName('totalNumberOfRolls')[0].innerHTML =
     'Total Number of Rolls: ' + allRolls.length
 
   //TODO: Move this into another function, probably
   largestPercentage = 0
-  var arrayOfNumbersRolled = []
-  for (var i = 0; i < numberOfRollOptions; i++) {
+  let arrayOfNumbersRolled = []
+  for (let i = 0; i < numberOfRollOptions; i++) {
     if (
       total ==
       document.getElementsByClassName('rollGraph')[0].children[i].children[0]
@@ -153,7 +138,7 @@ function tabulateRolls(total, currentNumber) {
 }
 
 function determineBarHeight(maximumHeight) {
-  for (var i = 0; i < numberOfRollOptions; i++) {
+  for (let i = 0; i < numberOfRollOptions; i++) {
     document.getElementsByClassName('actualGraph')[0].children[i].style.height =
       (
         (document.getElementsByClassName('rollGraph')[0].children[i].children[1]
@@ -165,8 +150,8 @@ function determineBarHeight(maximumHeight) {
 }
 
 // function colorSevensRed(total, who) {
-//   var firstPlayerRolls = document.getElementsByClassName('playerRolls')[0]
-//   var secondPlayerRolls = document.getElementsByClassName('playerRolls')[1]
+//   let firstPlayerRolls = document.getElementsByClassName('playerRolls')[0]
+//   let secondPlayerRolls = document.getElementsByClassName('playerRolls')[1]
 
 //   if (total == 7) {
 //     if (who % 2 === 1) {

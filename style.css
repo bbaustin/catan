@@ -1,7 +1,11 @@
 body {
   background: #7ae7c7;
-  font-family: 'Futura';
+  font-family: 'Futura', Trebuchet MS, Arial, sans-serif;
   font-weight: 100;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 section {
@@ -81,6 +85,7 @@ footer section {
 .playerRolls {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
   padding-bottom: 15px;
   width: 100%;
@@ -110,5 +115,12 @@ footer section {
   text-align: center;
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (max-width: 1100px) {
+  body {
+    font-weight: 700;
+  }
+  .playerRolls div {
+    max-width: 90%;
+    width: 90%;
+  }
 }
